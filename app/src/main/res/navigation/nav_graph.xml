@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myunsplashphotosapp.fragments.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_papularFragment"
+            app:destination="@id/papularFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_download"
+            app:destination="@id/download" />
+    </fragment>
+    <fragment
+        android:id="@+id/papularFragment"
+        android:name="com.example.myunsplashphotosapp.fragments.PapularFragment"
+        android:label="Popular Fragment"
+        tools:layout="@layout/fragment_papular" >
+        <action
+            android:id="@+id/action_papularFragment_to_randomFragment"
+            app:destination="@id/randomFragment" />
+        <action
+            android:id="@+id/action_papularFragment_to_download"
+            app:destination="@id/download" />
+    </fragment>
+    <fragment
+        android:id="@+id/randomFragment"
+        android:name="com.example.myunsplashphotosapp.fragments.RandomFragment"
+        android:label="Random Fragment"
+        tools:layout="@layout/fragment_random" >
+        <action
+            android:id="@+id/action_randomFragment_to_categorykFragment"
+            app:destination="@id/categorykFragment" />
+        <action
+            android:id="@+id/action_randomFragment_to_download"
+            app:destination="@id/download" />
+    </fragment>
+    <fragment
+        android:id="@+id/categorykFragment"
+        android:name="com.example.myunsplashphotosapp.fragments.CategorykFragment"
+        android:label="Category Fragment"
+        tools:layout="@layout/fragment_categoryk" >
+        <action
+            android:id="@+id/action_categorykFragment_to_categoryViewFragment"
+            app:destination="@id/categoryViewFragment" />
+        <action
+            android:id="@+id/action_categorykFragment_to_download"
+            app:destination="@id/download" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryViewFragment"
+        android:name="com.example.myunsplashphotosapp.fragments.CategoryViewFragment"
+        android:label="CategoryView Fragment"
+        tools:layout="@layout/fragment_category_view" >
+        <argument
+            android:name="user_categoryItem"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_categoryViewFragment_to_download"
+            app:destination="@id/download" />
+    </fragment>
+    <fragment
+        android:id="@+id/search"
+        android:name="com.example.myunsplashphotosapp.fragments.Search"
+        android:label="search"
+        tools:layout="@layout/search" >
+        <action
+            android:id="@+id/action_search_to_download"
+            app:destination="@id/download" />
+    </fragment>
+    <fragment
+        android:id="@+id/download"
+        android:name="com.example.myunsplashphotosapp.fragments.Download"
+        android:label="fragment_download"
+        tools:layout="@layout/fragment_download" >
+        <argument
+            android:name="photo"
+            app:argType="string" />
+    </fragment>
+</navigation>
